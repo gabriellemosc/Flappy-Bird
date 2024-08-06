@@ -199,7 +199,7 @@ def main():
 
    while rodando:
       relogio.tick(30)
-
+# Interação com o Usuário
       for evento in pygame.event.get():
          if evento.type == pygame.QUIT:
             rodando = False
@@ -209,6 +209,39 @@ def main():
             if evento.key == pygame.K_SPACE:
                for passaro in passaros:
                   passaro.pular()
+
+       #MOVER AS COISAS
+      for passaro in passaros:
+         passaro.mover()
+      chao.mover()
+
+      adicionar_cano = False
+      remover_canos = []
+      for cano in canos:
+         for i, passaro in enumerate(passaros):
+            if cano.colidir(passaro):
+               passaros.pop(i)
+            if not cano.passou and passaro.x > cano.x:
+               cano.passou = True
+               adicionar_cano = True
+         cano.mover()
+         if cano.x + cano.CANO_TOPO.get_width() < 0:
+            remover_canos.append(cano)
+
+      if adicionar_cano:
+         pontos += 1
+         canos.append(Cano(600))
+
+      for canos in remover_canos:
+          cano.remove(cano)
+
+
+      for i, passaro in enumerate(passaros):
+          if (passaro.y + passaro.imagem.get_height()) > chao.y or passaro.y < 0:
+             passaros.pop(i)
+      
+             
+            
 
 
 
