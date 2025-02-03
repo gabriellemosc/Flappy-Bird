@@ -1,63 +1,76 @@
-# Flappy Bird
+# Flappy Bird - Python  🎮
 
-Claro! Aqui está um exemplo de um README para o seu projeto de Flappy Bird em Python com Pygame:
+## Description
+This is a Python implementation of the classic Flappy Bird game using the **Pygame** library. The objective is to control the bird, making it fly between pipes without colliding with them.
 
----
+## Features
+- Smooth bird animation with different wing positions.
+- Randomly generated pipes for an endless challenge.
+- Collision detection system.
+- Score tracking.
+- Moving ground to simulate a scrolling effect.
 
-# Flappy Bird
+## 🚀 Technologies Used
+- **Python 3.x**
+- **Pygame**
 
-Este é um jogo clássico de Flappy Bird, desenvolvido em Python usando a biblioteca Pygame. O objetivo do jogo é controlar um pássaro e guiá-lo através de canos sem colidir com eles. O jogo é inspirado no famoso jogo móvel Flappy Bird.
+## Installation
 
-## Funcionalidades
+### Clone the Repository...
 
-- **Movimento do Pássaro**: O pássaro sobe quando a tecla de espaço é pressionada e desce automaticamente devido à gravidade.
-- **Canos**: Canos se movem da direita para a esquerda e são gerados automaticamente à medida que o jogador avança.
-- **Pontuação**: A pontuação aumenta cada vez que o pássaro passa por um par de canos.
-- **Colisões**: O jogo detecta colisões entre o pássaro e os canos, bem como se o pássaro toca o chão ou sai da tela.
+```
+git clone https://github.com/gabriellemosc/Flappy-Bird/
+```
 
-## Requisitos
+### Install Pygame 🛠️
+Run the following command to install the required library:
+```bash
+pip install pygame
+```
 
-- Python 3.12 ou superior
-- Pygame 2.6.0 ou superior
+## Running the Game 🎯
+1. Navigate to the game directory in the terminal.
+2. Run the game with:
+```bash
+python flappybird.py
+```
 
-## Instalação
+## Game Controls 🕹️
+- **Spacebar**: Make the bird jump.
+- **ESC / Close Button**: Exit the game.
 
-Para executar o jogo, siga estas etapas:
+## Game Files Structure
+```
+Flappy_Bird/
+│── imgs/               # Folder containing game images
+│   ├── pipe.png        # Pipe image
+│   ├── base.png        # Ground image
+│   ├── bg.png          # Background image
+│   ├── bird1.png       # Bird animation frame 1
+│   ├── bird2.png       # Bird animation frame 2
+│   ├── bird3.png       # Bird animation frame 3
+│── flappybird.py       # Main game script
+│── README.md           # Documentation file
+```
 
-1. **Clone o repositório**
+## Known Issues & Fixes 🔧
+### Issue: FileNotFoundError
+If you get an error related to missing images:
+1. Ensure the `imgs/` folder exists inside the same directory as `flappybird.py`.
+2. Verify that the file names match exactly as used in the code.
+3. Check if your working directory is correct by adding `print(os.getcwd())` in the script.
 
-   ```bash
-   git clone https://github.com/gabriellemosc/FlappyBird.git
-   cd FlappyBird
-   ```
 
-2. **Instale as dependências**
 
-   Certifique-se de ter o Pygame instalado. Você pode instalar o Pygame usando pip:
+### Issue: Game running too fast or too slow  ⚠️
+Modify the frame rate in `pygame.time.Clock().tick(30)` inside the `main()` function to adjust the game speed.
 
-   ```bash
-   pip install pygame
-   ```
 
-3. **Execute o jogo**
 
-   No diretório do projeto, execute o arquivo principal:
+## License ✔️
+This project is open-source and free to use for educational and personal purposes.
 
-   ```bash
-   python flappybird.py
-   ```
+## Credits
+Developed by **<a href="https://github.com/gabriellemosc">Gabriel Lemos</a>**.
 
-## Estrutura do Projeto
-
-- `flappybird.py`: O arquivo principal do jogo.
-- `imgs/`: Diretório contendo as imagens usadas no jogo (canos, pássaro, fundo, etc.).
-
-## Como Jogar
-
-- **Espaço**: Pressione a tecla espaço para fazer o pássaro voar.
-- **Objetivo**: Evite colidir com os canos e tente passar pelo maior número possível de canos para alcançar uma pontuação alta.
-
-## Contribuindo
-
-Se você quiser contribuir para o projeto, fique à vontade para enviar pull requests ou abrir issues com sugestões e correções.
 
