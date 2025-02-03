@@ -9,13 +9,21 @@ print("Diretório de Trabalho Atual:", os.getcwd())
 TELA_LARGURA = 500
 TELA_ALTURA = 800
 
-IMAGEM_CANO = pygame.transform.scale2x(pygame.image.load(r'C:/Users/gabri/Downloads/FlappyBird/FlappyBird/imgs/pipe.png'))
-IMAGEM_CHAO = pygame.transform.scale2x(pygame.image.load('C:/Users/gabri/Downloads/FlappyBird/FlappyBird/imgs/base.png'))
-IMAGEM_BACKGROUND = pygame.transform.scale2x(pygame.image.load('C:/Users/gabri/Downloads/FlappyBird/FlappyBird/imgs/bg.png'))
+
+# Diretório base onde o script está localizado
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+IMG_DIR = os.path.join(BASE_DIR, "imgs")
+
+
+# Corrigir caminhos das imagens
+IMAGEM_CANO = pygame.transform.scale2x(pygame.image.load(os.path.join(IMG_DIR, "pipe.png")))
+IMAGEM_CHAO = pygame.transform.scale2x(pygame.image.load(os.path.join(IMG_DIR, "base.png")))
+IMAGEM_BACKGROUND = pygame.transform.scale2x(pygame.image.load(os.path.join(IMG_DIR, "bg.png")))
 IMAGENS_PASSARO = [
-    pygame.transform.scale2x(pygame.image.load('C:/Users/gabri/Downloads/FlappyBird/FlappyBird/imgs/bird1.png')),
-    pygame.transform.scale2x(pygame.image.load('C:/Users/gabri/Downloads/FlappyBird/FlappyBird/imgs/bird2.png')),
-    pygame.transform.scale2x(pygame.image.load('C:/Users/gabri/Downloads/FlappyBird/FlappyBird/imgs/bird3.png'))
+    pygame.transform.scale2x(pygame.image.load(os.path.join(IMG_DIR, "bird1.png"))),
+    pygame.transform.scale2x(pygame.image.load(os.path.join(IMG_DIR, "bird2.png"))),
+    pygame.transform.scale2x(pygame.image.load(os.path.join(IMG_DIR, "bird3.png")))
 ]
 
 pygame.font.init()
